@@ -36,7 +36,39 @@ matrixA <- matrix(data = seq(2, 5, length = 10),
 
 ```{r}
 my_matrix + matrixA
-my_matrix  matrixA
+```
+
+```{r}
+cats <- matrix(data = c(0, 4, 3, 1), nrow = 2, ncol = 2, byrow = TRUE)
+dogs <- matrix(data = c(6, -3, 0, 2), nrow = 2, byrow = TRUE)
+
+dogs %*% cats
+```
+
+## Leslie Matrix
+
+```{r}
+insect_leslie <- matrix(data = c(0, 0, 600, 0.2, 0, 0, 0, 0.08, 0),
+                        nrow = 3,
+                        ncol = 3,
+                        byrow = TRUE)
+insect_leslie
+
+insect_y0 <- c(12000, 700, 500) #12000 eggs, 700 larvae, 500 adult females
+```
+
+#### Find the population structure for each life stage at t = 1 year
+
+```{r}
+insect_y1 <- insect_leslie %*% insect_y0
+insect_y1
+```
+
+#### Find pop. structure at t = 2 years
+
+```{r}
+insect_y2 <- insect_leslie %*% insect_y1
+insect_y2
 ```
 
 
