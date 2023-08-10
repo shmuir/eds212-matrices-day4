@@ -1,0 +1,12 @@
+---
+title: "Martrices"
+format: html
+editor: visual
+---
+
+## Create Vectors
+
+```{r}
+rain <- c(3, 5, 10.1, 6)
+```
+
